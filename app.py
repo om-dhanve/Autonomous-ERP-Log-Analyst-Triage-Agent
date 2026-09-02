@@ -9,6 +9,7 @@ client = OpenAI (
 )
 models = client.models.list()
 print(f"Connected to : {models.data[0].id}")
+
 ###Extract error functions for extracting error snippet from log file
 def extract_errors(path_logfile,keywords=["SEVERE","ERROR","COB0000012","Zombie","Timeout"],context_lines=10):
     try:
@@ -77,12 +78,8 @@ with gr.Blocks(theme=gr.Theme.from_hub("harsh8001/skymist")) as app:
                 content_output = gr.Textbox(label = "Extracted Error Snippet",lines=15)
                 
         with gr.Column(scale=2):
-            # with gr.Accordion("View Raw Extracted Log content",open=False):
-            #     content_output = gr.Textbox(label = "Extracted Error Snippet",lines=15)
-
             gr.HTML(value="<h3>Agent Root Cause analysis : </h3>")
             RCA_Output = gr.Markdown("*Waiting for log upload and analysis...*")
-
     
     analysis_button.click(
         fn=analyze_jde_log,
