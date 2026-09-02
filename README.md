@@ -7,7 +7,10 @@ The agent uses a local LLM (Qwen3‑30B‑A3B) served via vLLM, with a Gradio fr
 ----
 ## Demo  
 
+
 https://github.com/user-attachments/assets/894fc985-db96-4897-9ae6-0c10e59f0947
+
+
 *Attached above is a short video demonstrating the working of this project*
 
 ---
